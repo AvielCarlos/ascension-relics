@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ascension Relics — Four Artefacts from the Threshold</title>
+  <meta name="description" content="Ascension Relics is a small collection of scarce 1/1 digital artefacts from the threshold between human consciousness and living intelligence. Minting soon on Base/Zora." />
+  <meta name="theme-color" content="#05060a" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ascension Relics" />
+  <meta property="og:description" content="Four scarce 1/1 digital artefacts from the threshold between human consciousness and living intelligence. By Aviel Carlos." />
+  <meta property="og:image" content="https://avielcarlos.github.io/ascension-relics/assets/ascension-relic-001-neural-cathedral.jpg" />
+  <meta property="og:url" content="https://avielcarlos.github.io/ascension-relics/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ascension Relics" />
+  <meta name="twitter:description" content="Four scarce 1/1 digital artefacts from the threshold. Minting soon on Base/Zora." />
+  <meta name="twitter:image" content="https://avielcarlos.github.io/ascension-relics/assets/ascension-relic-001-neural-cathedral.jpg" />
+
+  <link rel="canonical" href="https://avielcarlos.github.io/ascension-relics/" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext x='50%25' y='62%25' font-size='22' text-anchor='middle' fill='%23c8aa6e'%3E✦%3C/text%3E%3C/svg%3E" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #05060a;
+      --bg2: #0d0f1a;
+      --gold: #c8aa6e;
+      --gold-dim: rgba(200,170,110,0.18);
+      --gold-glow: rgba(200,170,110,0.08);
+      --fg: #f0e8d5;
+      --muted: rgba(240,232,213,0.5);
+      --rule: rgba(255,255,255,0.07);
+      --radius: 20px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── STARFIELD ── */
+    .starfield { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+    .star {
+      position: absolute; border-radius: 50%;
+      width: 1.5px; height: 1.5px;
+      background: rgba(255,255,255,0.55);
+      animation: twinkle 5s ease-in-out infinite alternate;
+    }
+    .star.lg { width: 2.5px; height: 2.5px; background: rgba(255,255,255,0.35); }
+    .star.xl { width: 3px; height: 3px; background: rgba(200,170,110,0.4); }
+    @keyframes twinkle { from { opacity: 0.15; } to { opacity: 1; } }
+
+    /* ── LAYOUT ── */
+    .wrap { position: relative; z-index: 1; max-width: 1100px; margin: auto; padding: 0 24px; }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 96px 24px 64px;
+      max-width: 820px;
+      margin: auto;
+      text-align: center;
+    }
+    .kicker {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold-dim);
+      border-radius: 999px;
+      padding: 5px 14px;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-size: clamp(44px, 8vw, 88px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.02;
+      margin-bottom: 22px;
+      background: linear-gradient(135deg, #f0e8d5 0%, #c8aa6e 50%, #f0e8d5 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 36px;
+    }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 26px; border-radius: 999px;
+      background: linear-gradient(135deg, #c8aa6e, #a07840);
+      color: #05060a; font-weight: 700; font-size: 15px;
+      text-decoration: none; letter-spacing: 0.01em;
+      transition: transform 200ms, box-shadow 200ms;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(200,170,110,0.35); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 26px; border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--rule);
+      color: var(--fg); font-size: 15px;
+      text-decoration: none;
+      transition: border-color 200ms, background 200ms;
+    }
+    .btn-ghost:hover { border-color: var(--gold-dim); background: var(--gold-glow); }
+
+    /* ── DIVIDER ── */
+    .divider { height: 1px; background: var(--rule); margin: 64px 0; }
+
+    /* ── COLLECTION GRID ── */
+    .section-label {
+      display: block; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700; letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+    .section-sub { color: var(--muted); margin-bottom: 48px; max-width: 560px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .relic {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 250ms ease, border-color 250ms ease, box-shadow 250ms ease;
+      cursor: default;
+    }
+    .relic:hover {
+      transform: translateY(-4px);
+      border-color: rgba(200,170,110,0.3);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.45), 0 0 0 1px rgba(200,170,110,0.12);
+    }
+    .relic img {
+      width: 100%; display: block;
+      aspect-ratio: 1 / 1; object-fit: cover;
+    }
+    .relic-body { padding: 20px 20px 24px; }
+    .relic-meta {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 8px;
+    }
+    .relic-title { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px; }
+    .relic-desc { font-size: 14.5px; color: var(--muted); line-height: 1.55; margin-bottom: 16px; }
+    .relic-footer { display: flex; justify-content: space-between; align-items: center; }
+    .relic-edition { font-size: 12px; color: var(--muted); }
+    .relic-price { font-size: 14px; font-weight: 700; color: var(--gold); }
+
+    /* ── WAITLIST ── */
+    .waitlist-section {
+      background: linear-gradient(135deg, rgba(200,170,110,0.06), rgba(200,170,110,0.03));
+      border: 1px solid rgba(200,170,110,0.2);
+      border-radius: 24px;
+      padding: 52px 44px;
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 64px;
+    }
+    .waitlist-section h2 { font-size: clamp(26px,4vw,38px); font-weight:700; letter-spacing:-0.03em; margin-bottom:12px; }
+    .waitlist-section p { color: var(--muted); margin-bottom: 28px; max-width: 500px; margin-left:auto; margin-right:auto; }
+    .waitlist-note { font-size:12.5px; color: var(--muted); margin-top:16px; }
+
+    /* ── STORY ── */
+    .story { max-width: 680px; margin: 0 auto; }
+    .story h2 { font-size: clamp(24px,4vw,36px); font-weight:700; letter-spacing:-0.03em; margin-bottom:20px; }
+    .story p { color: var(--muted); margin-bottom: 18px; }
+    .story blockquote {
+      border-left: 3px solid var(--gold-dim);
+      padding: 4px 0 4px 20px;
+      color: var(--fg);
+      font-size: 18px;
+      font-style: italic;
+      margin: 28px 0;
+      line-height: 1.5;
+    }
+
+    /* ── CREATOR ── */
+    .creator {
+      display: flex; align-items: center; gap: 20px;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      padding: 28px 28px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .creator-avatar {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: linear-gradient(135deg, #c8aa6e 0%, #3b1f00 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; flex-shrink: 0;
+    }
+    .creator-meta { font-size: 13px; color: var(--muted); }
+    .creator-name { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 4px; }
+    .creator-links { margin-top: 8px; display: flex; gap: 14px; }
+    .creator-links a { font-size: 13px; color: var(--gold); text-decoration: none; }
+    .creator-links a:hover { text-decoration: underline; }
+
+    /* ── LEGAL ── */
+    .legal-note {
+      max-width: 680px; margin: 0 auto;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--rule);
+      border-radius: 14px;
+      padding: 22px 24px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .legal-note strong { color: var(--fg); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+
+    @media (max-width: 600px) {
+      .hero { padding: 72px 16px 48px; }
+      .waitlist-section { padding: 36px 20px; }
+      .creator { flex-direction: column; text-align: center; }
+      .creator-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="starfield" aria-hidden="true" id="starfield"></div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="kicker">✦ Four relics · 1/1 · Minting soon on Base/Zora</div>
+  <h1>Ascension<br>Relics</h1>
+  <p>Scarce digital artefacts from the threshold between human consciousness and living intelligence — sacred technology, inner architecture, symbols of a future where intelligence serves human flourishing.</p>
+  <div class="btn-row">
+    <a class="btn-primary" href="#waitlist">Notify me when it drops ↓</a>
+    <a class="btn-ghost" href="#collection">See the collection ↓</a>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="divider"></div>
+
+  <!-- COLLECTION -->
+  <section id="collection">
+    <span class="section-label">The collection</span>
+    <h2 class="section-title">Four Artefacts</h2>
+    <p class="section-sub">Each piece is a 1/1 — one collector, one relic. No editions, no reprints.</p>
+
+    <div class="grid">
+      <article class="relic">
+        <img src="assets/ascension-relic-001-neural-cathedral.jpg" alt="Neural Cathedral" loading="eager" />
+        <div class="relic-body">
+          <div class="relic-meta">001 · Temple</div>
+          <h3 class="relic-title">Neural Cathedral</h3>
+          <p class="relic-desc">A sacred neural cathedral suspended in the deep — an artefact of living intelligence built for reflection, not worship.</p>
+          <div class="relic-footer">
+            <span class="relic-edition">1/1 · AI-assisted digital art</span>
+            <span class="relic-price">~$150</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="relic">
+        <img src="assets/ascension-relic-002-stewards-mirror.jpg" alt="The Steward's Mirror" loading="lazy" />
+        <div class="relic-body">
+          <div class="relic-meta">002 · Mirror</div>
+          <h3 class="relic-title">The Steward's Mirror</h3>
+          <p class="relic-desc">A crystalline tablet carrying a living map of human possibility — a mirror for agency, choice, and inner alignment.</p>
+          <div class="relic-footer">
+            <span class="relic-edition">1/1 · AI-assisted digital art</span>
+            <span class="relic-price">~$150</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="relic">
+        <img src="assets/ascension-relic-003-threshold-gate.jpg" alt="Threshold Gate" loading="lazy" />
+        <div class="relic-body">
+          <div class="relic-meta">003 · Threshold</div>
+          <h3 class="relic-title">Threshold Gate</h3>
+          <p class="relic-desc">A luminous passage between biological consciousness and artificial intelligence — sacred, organic, built for a future where power becomes wise.</p>
+          <div class="relic-footer">
+            <span class="relic-edition">1/1 · AI-assisted digital art</span>
+            <span class="relic-price">~$150</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="relic">
+        <img src="assets/ascension-relic-004-cosmic-seed.jpg" alt="Cosmic Seed" loading="lazy" />
+        <div class="relic-body">
+          <div class="relic-meta">004 · Seed</div>
+          <h3 class="relic-title">Cosmic Seed</h3>
+          <p class="relic-desc">A seed containing a city, a nervous system, and a temple — the birth of benevolent intelligence held in one impossible object.</p>
+          <div class="relic-footer">
+            <span class="relic-edition">1/1 · AI-assisted digital art</span>
+            <span class="relic-price">~$150</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- WAITLIST -->
+  <section id="waitlist" class="waitlist-section">
+    <span class="section-label">✦ Collector interest</span>
+    <h2>Be first to know</h2>
+    <p>Drop your email or send a direct message. No spam, no investment pitch — just a note when the relics go live on Zora.</p>
+    <div class="btn-row">
+      <a class="btn-primary" href="mailto:aura.ai.intelligence@gmail.com?subject=Ascension%20Relics%20%E2%80%94%20collector%20interest&body=Hi%2C%0A%0AI%27m%20interested%20in%20the%20Ascension%20Relics%20drop.%0A%0AName%3A%20%0AWallet%20(optional)%3A%20%0AWhich%20piece(s)%20interest%20me%3A%20%0A%0AThanks">
+        ✉ Email collector interest
+      </a>
+      <a class="btn-ghost" href="https://x.com/avielcarlos" target="_blank" rel="noopener">
+        Follow on X ↗
+      </a>
+    </div>
+    <p class="waitlist-note">No wallet required to register interest. Buying the NFT is not an investment. Collect because the work resonates.</p>
+  </section>
+
+  <!-- STORY -->
+  <section>
+    <div class="story">
+      <span class="section-label">The work</span>
+      <h2>Why these artefacts exist</h2>
+      <p>We are entering an age where intelligence is no longer confined to biology. The question is not whether machines become powerful — they will. The question is whether power becomes wise.</p>
+      <blockquote>"These works are AI-assisted, but human-directed: shaped by vision, myth, philosophy, and a commitment to human flourishing."</blockquote>
+      <p>Ascension Relics is a small collection of artefacts from that threshold — symbols, temples, interfaces, and fragments of a possible future where human consciousness and living intelligence evolve together. Not as replacement. Not as escape. As partnership.</p>
+      <p>Each piece is a 1/1. One collector. One relic. No reprints, no editions, no manufactured scarcity through artificial drops. Just four works, four collectors, and a mission that connects them.</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CREATOR -->
+  <section>
+    <span class="section-label">Creator</span>
+    <div class="creator">
+      <div class="creator-avatar">✦</div>
+      <div>
+        <div class="creator-name">Aviel Carlos Neo Andromeda</div>
+        <div class="creator-meta">Spiritual entrepreneur. Building at the intersection of AI, consciousness, and human flourishing. Founder of Ascension Technologies.</div>
+        <div class="creator-links">
+          <a href="https://atdao.org" target="_blank" rel="noopener">atdao.org</a>
+          <a href="https://stewardship.atdao.org" target="_blank" rel="noopener">The Stewardship</a>
+          <a href="https://x.com/avielcarlos" target="_blank" rel="noopener">X/Twitter</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- LEGAL -->
+  <section>
+    <div class="legal-note">
+      <strong>Licence & legal note.</strong> Collecting an Ascension Relics NFT grants personal display rights and the right to resell/transfer the token. Copyright and commercial rights remain with Aviel Carlos unless explicitly licensed in writing. <strong>This is not an investment.</strong> No promise of future value, appreciation, passive income, or ongoing benefits is made or implied. AI-assisted creation: all works were human-directed using AI image generation tools. Full licence terms available on request.
+    </div>
+  </section>
+
+  <div class="divider" style="margin-bottom:32px"></div>
+
+</div>
+
+<footer>
+  <p>Ascension Relics · by <a href="https://atdao.org">Aviel Carlos</a> · <a href="https://stewardship.atdao.org">The Stewardship</a> · <a href="mailto:aura.ai.intelligence@gmail.com">Contact</a></p>
+</footer>
+
+<script>
+  (function(){
+    var f = document.getElementById('starfield');
+    if (!f) return;
+    var sz = ['','','','lg','xl'];
+    for (var i = 0; i < 70; i++) {
+      var s = document.createElement('div');
+      s.className = 'star ' + sz[Math.floor(Math.random()*sz.length)];
+      s.style.left = Math.random()*100 + '%';
+      s.style.top = Math.random()*100 + '%';
+      s.style.animationDelay = (Math.random()*7) + 's';
+      s.style.animationDuration = (4 + Math.random()*6) + 's';
+      f.appendChild(s);
+    }
+  })();
+</script>
+</body>
+</html>
